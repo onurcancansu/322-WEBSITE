@@ -1,0 +1,30 @@
+﻿@model MYRESTAURANT.Models.Classes.Product
+@{
+    ViewBag.Title = "CallProduct";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Ürün Güncelleme</h2>
+<br />
+
+@using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post))
+{
+        @Html.HiddenFor(x=> x.ProductID)
+        @Html.LabelFor(x => x.ProductName)
+        @Html.TextBoxFor(x => x.ProductName)
+        <br />
+        @Html.LabelFor(x => x.ProductPrice)
+        @Html.TextBoxFor(x => x.ProductPrice)
+        <br />
+        @Html.LabelFor(x => x.Category.CategoryID)
+        @Html.TextBoxFor(x => x.Categoryname)
+        <br />
+        @Html.LabelFor(x => x.ProductImage)
+        @Html.TextBoxFor(x => x.ProductImage)
+
+        <button class="btn btn-outline-info">Kaydet</button>
+    
+
+}
+
+

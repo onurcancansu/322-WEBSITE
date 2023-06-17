@@ -1,0 +1,24 @@
+﻿@model MYRESTAURANT.Models.Classes.Product
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Ürün Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.ProductName)
+    @Html.TextBoxFor(x => x.ProductName)
+    <br />
+    @Html.LabelFor(x => x.ProductPrice)
+    @Html.TextBoxFor(x => x.ProductPrice)
+    <br />
+    @Html.LabelFor(x => x.Category.CategoryName)
+    @Html.TextBoxFor(x => x.Categoryname)
+    <br />
+    @Html.LabelFor(x => x.ProductImage)
+    @Html.TextBoxFor(x => x.ProductImage)
+
+    <button class="btn btn-outline-info">Kaydet</button>
+</form>
+

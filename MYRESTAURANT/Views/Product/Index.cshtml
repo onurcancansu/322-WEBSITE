@@ -1,0 +1,35 @@
+﻿@using MYRESTAURANT.Models.Classes;
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<a href="/Product/AddProduct" class="btn btn-outline-primary" style="margin-top:20px">Ürün Ekle</a>
+<br />
+<table class="table table-bordered" style="margin-top:70px">
+    <tr>
+        <th>ID</th>
+        <th>Ürün Adı</th>
+        <th>Ücret</th>
+        <th>Category</th>
+        <th>Görüntü</th>
+    </tr>
+    @foreach(var p in Model)
+     {
+<tr>
+    <td>@p.ProductID</td>
+    <td>@p.ProductName</td>
+    <td>@p.ProductPrice</td>
+    <td>@p.Categoryname</td>
+    <td>@p.ProductImage</td>
+    <td><a href="/Product/DeleteProduct/@p.ProductID" class="btn btn-danger">Sil</a></td>
+
+
+    <td><a href="/Product/CallProduct/@p.ProductID" class="btn btn-success">Güncelle</a></td>
+</tr>
+
+     }
+
+</table>
+
+
